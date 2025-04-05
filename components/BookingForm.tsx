@@ -7,7 +7,6 @@ import { toast } from "sonner";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Calendar } from "@/components/ui/calendar";
 import {
   Form,
   FormControl,
@@ -29,6 +28,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Calendar } from "@/components/ui/calendar";
 
 interface FormValues {
   name: string;
@@ -77,6 +77,54 @@ const BookingForm = () => {
       name: "",
       email: "",
       classOrExam: "",
+    },
+    resolver: async (values) => {
+      const errors: Record<string, { type: string; message: string }> = {};
+      
+      if (!values.name) {
+        errors.name = {
+          type: "required",
+          message: "Please enter your name",
+        };
+      }
+      
+      if (!values.email) {
+        errors.email = {
+          type: "required",
+          message: "Please enter your email address",
+        };
+      } else if (!/^\S+@\S+\.\S+$/.test(values.email)) {
+        errors.email = {
+          type: "pattern",
+          message: "Please enter a valid email address",
+        };
+      }
+      
+      if (!values.classOrExam) {
+        errors.classOrExam = {
+          type: "required",
+          message: "Please select an option",
+        };
+      }
+      
+      if (!values.date) {
+        errors.date = {
+          type: "required",
+          message: "Please select a date",
+        };
+      }
+      
+      if (!values.timeSlot) {
+        errors.timeSlot = {
+          type: "required",
+          message: "Please select a time slot",
+        };
+      }
+      
+      return {
+        values,
+        errors,
+      };
     },
   });
 
@@ -200,10 +248,10 @@ const BookingForm = () => {
                 type="button"
                 variant={selectedOption === "class" ? "default" : "outline"}
                 className={cn(
-                  "rounded-lg",
+                  "rounded-lg border shadow-sm",
                   selectedOption === "class"
-                    ? "bg-edu-blue text-white"
-                    : "text-edu-gray"
+                    ? "bg-edu-blue  border-edu-blue"
+                    : "bg-white text-edu-black/70 border-gray-300 hover:bg-gray-50 hover:text-edu-black"
                 )}
                 onClick={() => setSelectedOption("class")}
               >
@@ -213,10 +261,10 @@ const BookingForm = () => {
                 type="button"
                 variant={selectedOption === "exam" ? "default" : "outline"}
                 className={cn(
-                  "rounded-lg",
+                  "rounded-lg border shadow-sm",
                   selectedOption === "exam"
-                    ? "bg-edu-blue text-white"
-                    : "text-edu-gray"
+                    ? "bg-edu-blue  border-edu-blue"
+                    : "bg-white text-edu-black/70 border-gray-300 hover:bg-gray-50 hover:text-edu-black"
                 )}
                 onClick={() => setSelectedOption("exam")}
               >
@@ -249,7 +297,7 @@ const BookingForm = () => {
                         />
                       </SelectTrigger>
                     </FormControl>
-                    <SelectContent>
+                    <SelectContent className="bg-white">
                       {(selectedOption === "class"
                         ? classOptions
                         : examOptions
@@ -271,42 +319,37 @@ const BookingForm = () => {
               render={({ field }) => (
                 <FormItem className="flex flex-col">
                   <FormLabel>Select Date</FormLabel>
-                  <Popover>
-                    <PopoverTrigger asChild>
-                      <FormControl>
+                  <FormControl>
+                    <Popover>
+                      <PopoverTrigger asChild>
                         <Button
                           variant={"outline"}
                           className={cn(
-                            "rounded-lg w-full pl-3 text-left font-normal",
+                            "w-full justify-start text-left font-normal rounded-lg",
                             !field.value && "text-muted-foreground"
                           )}
                         >
+                          <CalendarIcon className="mr-2 h-4 w-4" />
                           {field.value ? (
                             format(field.value, "PPP")
                           ) : (
                             <span>Pick a date</span>
                           )}
-                          <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                         </Button>
-                      </FormControl>
-                    </PopoverTrigger>
-                    <PopoverContent className="w-auto p-0" align="start">
-                      <Calendar
-                        mode="single"
-                        selected={field.value}
-                        onSelect={field.onChange}
-                        disabled={(date: Date) => {
-                          // Disable past dates and weekends
-                          const today = new Date();
-                          today.setHours(0, 0, 0, 0);
-                          const day = date.getDay();
-                          return date < today || day === 0 || day === 6;
-                        }}
-                        initialFocus
-                        className={cn("p-3 pointer-events-auto")}
-                      />
-                    </PopoverContent>
-                  </Popover>
+                      </PopoverTrigger>
+                      <PopoverContent className="w-auto p-0 bg-white" align="start">
+                        <Calendar
+                          mode="single"
+                          selected={field.value}
+                          onSelect={field.onChange}
+                          disabled={(date) =>
+                            date < new Date() || date > new Date(new Date().setMonth(new Date().getMonth() + 2))
+                          }
+                          initialFocus
+                        />
+                      </PopoverContent>
+                    </Popover>
+                  </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
@@ -320,16 +363,20 @@ const BookingForm = () => {
                   <FormLabel>Preferred Time Slot</FormLabel>
                   <Select
                     onValueChange={field.onChange}
-                    defaultValue={field.value}
+                    value={field.value}
                   >
                     <FormControl>
-                      <SelectTrigger className="rounded-lg">
+                      <SelectTrigger className="rounded-lg w-full">
                         <SelectValue placeholder="Select a time slot" />
                       </SelectTrigger>
                     </FormControl>
-                    <SelectContent>
+                    <SelectContent className="rounded-lg bg-white">
                       {timeSlots.map((slot) => (
-                        <SelectItem key={slot} value={slot}>
+                        <SelectItem 
+                          key={slot} 
+                          value={slot}
+                          className="cursor-pointer hover:bg-edu-blue/10"
+                        >
                           {slot}
                         </SelectItem>
                       ))}

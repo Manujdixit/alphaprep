@@ -1,0 +1,20 @@
+# robots.txt for AlphaPrep
+User-agent: *
+Allow: /
+
+# Disallow admin or private areas if they exist in the future
+# Disallow: /admin/
+# Disallow: /private/
+
+# Allow search engines to access all educational content
+Allow: /about/
+Allow: /teachers/
+Allow: /testimonials/
+Allow: /book-demo/
+Allow: /contact/
+
+# Sitemap location (uncomment and update when sitemap is available)
+# Sitemap: https://alphaprep.com/sitemap.xml
+
+# Crawl delay directive (optional)
+Crawl-delay: 10
