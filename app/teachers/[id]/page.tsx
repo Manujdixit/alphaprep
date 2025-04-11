@@ -9,7 +9,7 @@ import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { teachers } from "../page";
+import { teachers } from "@/data/teachers";
 
 const TeacherDetail = ({ params }: { params: Promise<{ id: string }> }) => {
   const unwrappedParams = use(params);

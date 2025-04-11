@@ -28,7 +28,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Calendar } from "@/components/ui/calendar";
+import { Calendar } from "@/components/ui/calendar-rac";
+import Component from "./comp-487";
 
 export interface FormValues {
   name: string;
@@ -156,7 +157,6 @@ const BookingForm = () => {
       });
 
       console.log(rawResponse);
-      
 
       toast.success("Demo class booked successfully!", {
         description: `Your ${
@@ -339,18 +339,9 @@ const BookingForm = () => {
                         className="w-auto p-0 bg-white"
                         align="start"
                       >
-                        <Calendar
-                          mode="single"
+                        <Component
                           selected={field.value}
                           onSelect={field.onChange}
-                          disabled={(date) =>
-                            date < new Date() ||
-                            date >
-                              new Date(
-                                new Date().setMonth(new Date().getMonth() + 2)
-                              )
-                          }
-                          initialFocus
                         />
                       </PopoverContent>
                     </Popover>

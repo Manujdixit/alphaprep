@@ -23,7 +23,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import HeroSection from "@/components/HeroSection";
 import NavBarHome from "@/components/NavBar copy";
-import { teachers } from "./teachers/page";
+import { teachers } from "@/data/teachers";
 
 const features = [
   {

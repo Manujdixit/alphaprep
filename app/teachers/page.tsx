@@ -11,19 +11,9 @@ import TeacherCard from "@/components/TeacherCard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
+import { Teacher } from "@/data/teachers";
 
-interface Teacher {
-  id: number;
-  name: string;
-  position: string;
-  image: string;
-  education: string;
-  experience: string;
-  rating: number;
-  available: boolean;
-}
-
-export const teachers: Teacher[] = [
+const teachers: Teacher[] = [
   {
     id: 1,
     name: "Er. Animesh Singh",
