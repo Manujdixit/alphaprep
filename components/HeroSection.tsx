@@ -1,8 +1,34 @@
 import React from "react";
-import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+
+// Dynamically import motion to reduce bundle size
+const MotionDiv = dynamic(
+  () => import("framer-motion").then((mod) => mod.motion.div),
+  {
+    ssr: false,
+  }
+);
+const MotionSpan = dynamic(
+  () => import("framer-motion").then((mod) => mod.motion.span),
+  {
+    ssr: false,
+  }
+);
+const MotionH1 = dynamic(
+  () => import("framer-motion").then((mod) => mod.motion.h1),
+  {
+    ssr: false,
+  }
+);
+const MotionP = dynamic(
+  () => import("framer-motion").then((mod) => mod.motion.p),
+  {
+    ssr: false,
+  }
+);
 
 const HeroSection = () => {
   const fadeIn = {
@@ -30,23 +56,42 @@ const HeroSection = () => {
     },
   };
 
+  // Pre-render stars to avoid multiple map operations
+  const stars = (
+    <>
+      {[1, 2, 3, 4, 5].map((i) => (
+        <svg
+          key={i}
+          xmlns="http://www.w3.org/2000/svg"
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="sm:w-4 sm:h-4"
+        >
+          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+        </svg>
+      ))}
+    </>
+  );
+
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden pt-8 sm:pt-12 md:pt-20 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
       <div className="container mx-auto px-3 sm:px-6 py-16 sm:py-8 md:py-12 z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 sm:gap-8 lg:gap-10 items-center">
           {/* Text Content */}
           <div className="order-1 lg:order-1 space-y-4 sm:space-y-6">
-            <motion.span
+            <MotionSpan
               custom={0}
               initial="hidden"
               animate="visible"
               variants={fadeIn}
-              className="inline-block text-black rounded-full px-3 sm:px-4 py-1 text-sm font-medium bg-white "
+              className="inline-block text-black rounded-full px-3 sm:px-4 py-1 text-sm font-medium bg-white"
             >
               Personalized Education Journey
-            </motion.span>
+            </MotionSpan>
 
-            <motion.h1
+            <MotionH1
               custom={1}
               initial="hidden"
               animate="visible"
@@ -55,9 +100,9 @@ const HeroSection = () => {
             >
               Transform Your Learning With 1-on-1{" "}
               <span className="text-edu-blue">Live Classes</span>
-            </motion.h1>
+            </MotionH1>
 
-            <motion.p
+            <MotionP
               custom={2}
               initial="hidden"
               animate="visible"
@@ -67,22 +112,22 @@ const HeroSection = () => {
               Experience personalized education tailored to your unique learning
               style. Our expert teachers provide individualized attention to
               help you excel in your studies.
-            </motion.p>
+            </MotionP>
 
-            <motion.div
+            <MotionDiv
               custom={3}
               initial="hidden"
               animate="visible"
               variants={fadeIn}
               className="flex flex-col sm:flex-row gap-3 sm:gap-4"
             >
-              <Link href="/book-demo">
+              <Link href="/book-demo" passHref legacyBehavior>
                 <Button className="w-full sm:w-auto bg-edu-blue hover:bg-edu-blue/90 text-black bg-white rounded-lg px-4 sm:px-6 py-4 sm:py-6 h-auto">
                   Book a Free Demo Class
                   <ArrowRight size={18} className="ml-2" />
                 </Button>
               </Link>
-              <Link href="/about">
+              <Link href="/about" passHref legacyBehavior>
                 <Button
                   variant="outline"
                   className="w-full sm:w-auto rounded-lg border-edu-gray/30 hover:bg-gray-100 hover:text-black text-edu-gray px-4 sm:px-6 py-4 sm:py-6 h-auto"
@@ -90,9 +135,9 @@ const HeroSection = () => {
                   Learn More About Us
                 </Button>
               </Link>
-            </motion.div>
+            </MotionDiv>
 
-            <motion.div
+            <MotionDiv
               custom={4}
               initial="hidden"
               animate="visible"
@@ -104,26 +149,14 @@ const HeroSection = () => {
                   Join our 500+ satisfied students
                 </p>
                 <div className="flex items-center gap-1 text-amber-500">
-                  {[1, 2, 3, 4, 5].map((i) => (
-                    <svg
-                      key={i}
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="14"
-                      height="14"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      className="sm:w-4 sm:h-4"
-                    >
-                      <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                    </svg>
-                  ))}
+                  {stars}
                 </div>
               </div>
-            </motion.div>
+            </MotionDiv>
           </div>
 
-          {/* Image/Illustration */}
-          <motion.div
+          {/* Image/Illustration - Loaded only on client side */}
+          <MotionDiv
             className="order-2 lg:order-2 relative w-full"
             animate={floatingAnimation}
           >
@@ -194,7 +227,7 @@ const HeroSection = () => {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </MotionDiv>
         </div>
       </div>
     </section>
