@@ -1,15 +1,5 @@
 export const teachers: Teacher[] = [
   {
-    id: 1,
-    name: "Er. Animesh Singh",
-    position: "Chemistry Expert",
-    image: "/animesh.png",
-    education: "B. Tech.",
-    experience: "3+ Years",
-    rating: 4.9,
-    available: true,
-  },
-  {
     id: 2,
     name: "Er. Dhirendra Singh",
     position: "Chemistry Expert",
@@ -31,12 +21,32 @@ export const teachers: Teacher[] = [
   },
   {
     id: 4,
+    name: "Jai Prakash Maurya ",
+    position: "Biology Expert",
+    image: "./jai.png",
+    education: "M. Science",
+    experience: "4+ Years",
+    rating: 5.0,
+    available: true,
+  },
+  {
+    id: 5,
     name: "Er. Indresh Maurya",
     position: "Physics Expert",
     image: "/indresh.png",
     education: "M. Tech.",
     experience: "9+ Years",
     rating: 4.7,
+    available: true,
+  },
+  {
+    id: 6,
+    name: "Er. Animesh Singh",
+    position: "Chemistry Expert",
+    image: "/animesh.png",
+    education: "B. Tech.",
+    experience: "3+ Years",
+    rating: 4.9,
     available: true,
   },
   {
@@ -49,16 +59,7 @@ export const teachers: Teacher[] = [
     rating: 4.8,
     available: true,
   },
-  {
-    id: 8,
-    name: "Jai Prakash Maurya ",
-    position: "Biology Expert",
-    image: "./jai.png",
-    education: "M. Science",
-    experience: "4+ Years",
-    rating: 5.0,
-    available: true,
-  },
+
   {
     id: 9,
     name: "Manuj Dixit",

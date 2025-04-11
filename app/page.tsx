@@ -398,7 +398,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5 }}
-                className="text-3xl md:text-4xl font-serif font-medium text-edu-black mb-4"
+                className="text-3xl md:text-4xl font-serif font-medium text-white mb-4"
               >
                 What Our <span className="text-edu-blue">Students Say</span>
               </motion.h2>
@@ -407,7 +407,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-edu-gray max-w-2xl"
+                className="text-white max-w-2xl"
               >
                 Hear success stories from students and parents who have
                 experienced the Alphaprep difference.
@@ -422,7 +422,7 @@ export default function Home() {
               <Link href="/testimonials">
                 <Button
                   variant="outline"
-                  className="mt-5 md:mt-0 border-edu-gray/30 text-edu-gray hover:bg-gray-100 rounded-lg"
+                  className="mt-5 md:mt-0 border-edu-gray/30 text-black bg-white  hover:bg-gray-100 rounded-lg"
                 >
                   View All Testimonials
                   <ArrowRight size={16} className="ml-2" />
