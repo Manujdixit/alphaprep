@@ -81,46 +81,22 @@ const HeroSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 sm:gap-8 lg:gap-10 items-center">
           {/* Text Content */}
           <div className="order-1 lg:order-1 space-y-4 sm:space-y-6">
-            <MotionSpan
-              custom={0}
-              initial="hidden"
-              animate="visible"
-              variants={fadeIn}
-              className="inline-block text-black rounded-full px-3 sm:px-4 py-1 text-sm font-medium bg-white"
-            >
+            <span className="inline-block text-black rounded-full px-3 sm:px-4 py-1 text-sm font-medium bg-white">
               Personalized Education Journey
-            </MotionSpan>
+            </span>
 
-            <MotionH1
-              custom={1}
-              initial="hidden"
-              animate="visible"
-              variants={fadeIn}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-edu-black leading-tight"
-            >
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-edu-black leading-tight">
               Transform Your Learning With 1-on-1{" "}
               <span className="text-edu-blue">Live Classes</span>
-            </MotionH1>
+            </h1>
 
-            <MotionP
-              custom={2}
-              initial="hidden"
-              animate="visible"
-              variants={fadeIn}
-              className="text-edu-gray text-base sm:text-lg max-w-xl"
-            >
+            <p className="text-edu-gray text-base sm:text-lg max-w-xl">
               Experience personalized education tailored to your unique learning
               style. Our expert teachers provide individualized attention to
               help you excel in your studies.
-            </MotionP>
+            </p>
 
-            <MotionDiv
-              custom={3}
-              initial="hidden"
-              animate="visible"
-              variants={fadeIn}
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4"
-            >
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link href="/book-demo" passHref legacyBehavior>
                 <Button className="w-full sm:w-auto bg-edu-blue hover:bg-edu-blue/90 text-black bg-white rounded-lg px-4 sm:px-6 py-4 sm:py-6 h-auto">
                   Book a Free Demo Class
@@ -135,15 +111,9 @@ const HeroSection = () => {
                   Learn More About Us
                 </Button>
               </Link>
-            </MotionDiv>
+            </div>
 
-            <MotionDiv
-              custom={4}
-              initial="hidden"
-              animate="visible"
-              variants={fadeIn}
-              className="flex items-center gap-3 sm:gap-4"
-            >
+            <div className="flex items-center gap-3 sm:gap-4">
               <div>
                 <p className="text-edu-black font-medium text-sm sm:text-base">
                   Join our 500+ satisfied students
@@ -152,7 +122,7 @@ const HeroSection = () => {
                   {stars}
                 </div>
               </div>
-            </MotionDiv>
+            </div>
           </div>
 
           {/* Image/Illustration - Loaded only on client side */}
