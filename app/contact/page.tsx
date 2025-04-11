@@ -1,7 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Clock, Calendar, ArrowRight, MessageSquare, Users, Headphones } from "lucide-react";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  Calendar,
+  ArrowRight,
+  MessageSquare,
+  Users,
+  Headphones,
+} from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 import Link from "next/link";
 import NavBar from "@/components/NavBar";
@@ -25,7 +35,7 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email Address",
-    details: ["info@eduvibe.com", "support@eduvibe.com"],
+    details: ["info@Alphaprep.com", "support@Alphaprep.com"],
   },
   {
     icon: Clock,
@@ -38,17 +48,20 @@ const supportOptions = [
   {
     icon: MessageSquare,
     title: "Live Chat Support",
-    description: "Get instant answers to your questions through our live chat available during business hours.",
+    description:
+      "Get instant answers to your questions through our live chat available during business hours.",
   },
   {
     icon: Users,
     title: "Parent-Teacher Meetings",
-    description: "Schedule a virtual meeting with our teachers to discuss your child's progress and learning goals.",
+    description:
+      "Schedule a virtual meeting with our teachers to discuss your child's progress and learning goals.",
   },
   {
     icon: Headphones,
     title: "Technical Support",
-    description: "Having trouble with our online platform? Our tech team is ready to help you resolve any issues.",
+    description:
+      "Having trouble with our online platform? Our tech team is ready to help you resolve any issues.",
   },
 ];
 
@@ -111,7 +124,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-white">
       <NavBar />
-      
+
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 md:px-8 bg-gradient-to-b from-blue-50 to-white">
         <div className="max-w-7xl mx-auto">
@@ -130,8 +143,9 @@ const Contact = () => {
               variants={fadeIn}
               className="text-edu-gray max-w-2xl mx-auto"
             >
-              Have questions about our programs or want to start your educational journey? 
-              We're here to provide the guidance and support you need.
+              Have questions about our programs or want to start your
+              educational journey? We're here to provide the guidance and
+              support you need.
             </motion.p>
           </div>
 
@@ -170,10 +184,10 @@ const Contact = () => {
               </motion.div>
             </div>
 
-            <motion.div 
+            <motion.div
               className="lg:col-span-3"
-              initial="hidden" 
-              animate="visible" 
+              initial="hidden"
+              animate="visible"
               variants={fadeIn}
             >
               <ContactForm />
@@ -200,7 +214,8 @@ const Contact = () => {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-edu-gray max-w-2xl mx-auto"
             >
-              We offer multiple ways to get the support you need throughout your learning journey.
+              We offer multiple ways to get the support you need throughout your
+              learning journey.
             </motion.p>
           </div>
 
@@ -227,68 +242,6 @@ const Contact = () => {
               );
             })}
           </div>
-        </div>
-      </section>
-
-      {/* Map Section */}
-      <section className="py-20 px-4 md:px-8 bg-gradient-to-r from-slate-50 to-blue-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <motion.h2
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5 }}
-              className="text-3xl md:text-4xl font-serif font-medium text-edu-black mb-4"
-            >
-              Our <span className="text-edu-blue">Location</span>
-            </motion.h2>
-            <motion.p
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-edu-gray max-w-2xl mx-auto"
-            >
-              While our classes are online, you're welcome to visit our
-              headquarters for in-person consultations.
-            </motion.p>
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <div className="glass-card rounded-xl overflow-hidden shadow-lg">
-              <div className="aspect-[16/9] w-full bg-gray-100 relative">
-                {/* Replace with actual map implementation if needed */}
-                <div className="absolute inset-0 flex items-center justify-center bg-blue-50/50">
-                  <div className="text-center max-w-md px-6">
-                    <div className="w-20 h-20 rounded-full bg-white shadow-md flex items-center justify-center mx-auto mb-6">
-                      <MapPin size={36} className="text-edu-blue" />
-                    </div>
-                    <h3 className="text-xl font-serif font-medium text-edu-black mb-2">
-                      Our Headquarters
-                    </h3>
-                    <p className="mb-4 text-edu-gray">
-                      123 Education Avenue, Learning District, Knowledgeville,
-                      54321
-                    </p>
-                    <div className="mt-4">
-                      <a
-                        href="https://maps.google.com"
-                        target="_blank"
-                        className="inline-flex items-center gap-2 text-white bg-edu-blue hover:bg-edu-blue/90 px-4 py-2 rounded-lg font-medium text-sm transition-colors"
-                      >
-                        Get Directions
-                        <ArrowRight size={14} />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
         </div>
       </section>
 
@@ -393,7 +346,9 @@ const Contact = () => {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-medium mb-1">Personalized Attention</h4>
+                      <h4 className="font-medium mb-1">
+                        Personalized Attention
+                      </h4>
                       <p className="text-sm text-black">
                         Individualized learning plans tailored to each student's
                         needs

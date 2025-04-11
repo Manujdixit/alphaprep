@@ -44,10 +44,15 @@ const NavBarHome = () => {
         <Link
           href="/"
           className="flex items-center gap-2"
-          aria-label="EduVibe - Return to homepage"
+          aria-label="Alphaprep - Return to homepage"
         >
-          <span className={cn("text-2xl font-serif font-bold  ",isScrolled?"text-edu-black":"text-white hover:text-edu-blue")}>
-            EduVibe
+          <span
+            className={cn(
+              "text-2xl font-serif font-bold  ",
+              isScrolled ? "text-edu-black" : "text-white hover:text-edu-blue"
+            )}
+          >
+            Alphaprep
           </span>
         </Link>
 
@@ -62,7 +67,9 @@ const NavBarHome = () => {
                   "text-sm font-medium link-underline transition-colors",
                   pathname === link.path
                     ? "text-edu-blue"
-                    : isScrolled ? "text-edu-black" : "text-white hover:text-edu-blue"
+                    : isScrolled
+                    ? "text-edu-black"
+                    : "text-white hover:text-edu-blue"
                 )}
               >
                 {link.name}
@@ -109,8 +116,10 @@ const NavBarHome = () => {
                 className={cn(
                   "text-base py-2 font-medium transition-colors px-3 rounded-md",
                   pathname === link.path
-                    ? "text-edu-blue bg-edu-blue/10"
-                    : isScrolled ? "text-edu-black hover:text-edu-blue hover:bg-edu-blue/5" : "text-white hover:text-edu-blue hover:bg-edu-blue/5"
+                    ? "text-black bg-edu-blue/10"
+                    : isScrolled
+                    ? "text-edu-black hover:text-edu-blue hover:bg-edu-blue/5"
+                    : "text-black hover:text-edu-blue hover:bg-edu-blue/5"
                 )}
                 tabIndex={isMobileMenuOpen ? 0 : -1}
               >

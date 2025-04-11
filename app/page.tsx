@@ -52,8 +52,6 @@ const features = [
   },
 ];
 
-
-
 const testimonials = [
   {
     name: "James Wilson",
@@ -61,7 +59,7 @@ const testimonials = [
     image:
       "https://images.unsplash.com/photo-1463453091185-61582044d556?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3",
     testimonial:
-      "My son's grades have improved significantly since starting with EduVibe. The personalized attention he receives is something that was missing in his regular school classes.",
+      "My son's grades have improved significantly since starting with Alphaprep. The personalized attention he receives is something that was missing in his regular school classes.",
     rating: 5,
   },
   {
@@ -103,11 +101,6 @@ const subjectCategories = [
     icon: BookIcon,
   },
   {
-    title: "Languages",
-    subjects: ["English", "Spanish", "French", "German"],
-    icon: Book,
-  },
-  {
     title: "Test Prep",
     subjects: ["SAT", "ACT", "AP Exams", "IB Exams"],
     icon: GraduationCap,
@@ -133,7 +126,7 @@ export default function Home() {
               transition={{ duration: 0.5 }}
               className="text-3xl md:text-4xl font-serif font-medium text-edu-black mb-4"
             >
-              Why Choose <span className="text-edu-blue">EduVibe</span>?
+              Why Choose <span className="text-edu-blue">Alphaprep</span>?
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -255,6 +248,27 @@ export default function Home() {
                 </motion.div>
               );
             })}
+            <motion.div
+              key={"Other Subjects/Exams"}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: 5 * 0.1 }}
+              className="glass-card rounded-xl overflow-hidden  hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex items-center justify-center"
+            >
+              <div className="p-6 text-center h-12 rounded-lg bg-edu-blue/10 flex flex-col items-center justify-center mb-5 group-hover:bg-edu-blue/20 transition-colors duration-300">
+                <h1 className="mb-5">
+                  Looking for any other exam/ subject/ class / skill?
+                </h1>
+                <button className="text-edu-blue text-sm font-medium flex items-center gap-1 group">
+                  Learn More
+                  <ArrowRight
+                    size={14}
+                    className="group-hover:translate-x-1 transition-transform duration-300"
+                  />
+                </button>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -271,7 +285,7 @@ export default function Home() {
                 transition={{ duration: 0.5 }}
                 className="text-3xl md:text-4xl font-serif font-medium mb-4"
               >
-                Ready to Experience the EduVibe Difference?
+                Ready to Experience the Alphaprep Difference?
               </motion.h2>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -396,7 +410,7 @@ export default function Home() {
                 className="text-edu-gray max-w-2xl"
               >
                 Hear success stories from students and parents who have
-                experienced the EduVibe difference.
+                experienced the Alphaprep difference.
               </motion.p>
             </div>
             <motion.div
@@ -464,7 +478,7 @@ export default function Home() {
           >
             <Link href="/book-demo">
               <Button
-              variant={"outline"}
+                variant={"outline"}
                 size="lg"
                 className="bg-edu-blue hover:bg-edu-blue/90 text-black rounded-lg px-6 py-6 h-auto w-full sm:w-auto"
               >

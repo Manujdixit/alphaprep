@@ -44,10 +44,10 @@ const NavBar = () => {
         <Link
           href="/"
           className="flex items-center gap-2"
-          aria-label="EduVibe - Return to homepage"
+          aria-label="Alphaprep - Return to homepage"
         >
           <span className="text-2xl font-serif font-bold text-black">
-            EduVibe
+            Alphaprep
           </span>
         </Link>
 

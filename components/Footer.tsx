@@ -18,7 +18,7 @@ const Footer = () => {
           <div>
             <Link href="/" className="flex items-center gap-2 mb-5">
               <span className="text-xl font-serif font-bold text-edu-blue">
-                EduVibe
+                Alphaprep
               </span>
             </Link>
             <p className="text-edu-gray text-sm leading-relaxed mb-6">
@@ -167,10 +167,10 @@ const Footer = () => {
               <li className="flex items-center gap-3">
                 <Mail size={18} className="text-edu-blue shrink-0" />
                 <a
-                  href="mailto:info@eduvibe.com"
+                  href="mailto:info@Alphaprep.com"
                   className="text-edu-gray hover:text-edu-blue text-sm transition-colors"
                 >
-                  info@eduvibe.com
+                  info@Alphaprep.com
                 </a>
               </li>
             </ul>
@@ -179,7 +179,11 @@ const Footer = () => {
 
         <div className="border-t border-gray-200 mt-12 pt-6 flex flex-col sm:flex-row justify-between items-center">
           <p className="text-edu-gray text-xs text-center sm:text-left">
-            &copy; {new Date().getFullYear()} EduVibe. All rights reserved.
+            &copy; {new Date().getFullYear()} Alphaprep. All rights reserved.
+          </p>
+          <p className="text-[10px]">
+            Made with ❤️ and ☕ by{" "}
+            <a href="https://www.linkedin.com/in/manuj-dixit/">Manuj</a>
           </p>
           <div className="flex gap-5 mt-4 sm:mt-0">
             <a

@@ -25,7 +25,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-type FormValues = {
+export type FormValues = {
   name: string;
   email: string;
   phone: string;
@@ -49,17 +49,39 @@ const ContactForm = () => {
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    console.log(data);
+    
 
-    console.log("Form submitted:", data);
+    try {
+      const rawResponse = await fetch("/api/contactForm", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
 
-    toast.success("Message sent successfully!", {
-      description: "We'll get back to you as soon as possible.",
-    });
+      if (!rawResponse.ok) {
+        throw new Error("Failed to submit form");
+      }
 
-    form.reset();
-    setIsSubmitting(false);
+      const responseData = await rawResponse.json();
+      console.log("Response:", responseData);
+
+      toast.success("Message sent successfully!", {
+        description: "We'll get back to you as soon as possible.",
+      });
+
+      form.reset();
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast.error("Failed to send message", {
+        description: "Please try again later.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const fadeInUp = {

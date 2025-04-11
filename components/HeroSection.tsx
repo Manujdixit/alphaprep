@@ -99,18 +99,6 @@ const HeroSection = () => {
               variants={fadeIn}
               className="flex items-center gap-3 sm:gap-4"
             >
-              <div className="flex -space-x-2">
-                {[1, 2, 3, 4].map((i) => (
-                  <div
-                    key={i}
-                    className="w-8 sm:w-10 h-8 sm:h-10 rounded-full bg-gray-200 border-2 border-white flex items-center justify-center overflow-hidden"
-                  >
-                    <span className="text-xs font-medium text-edu-blue">
-                      U{i}
-                    </span>
-                  </div>
-                ))}
-              </div>
               <div>
                 <p className="text-edu-black font-medium text-sm sm:text-base">
                   Join our 500+ satisfied students
@@ -129,9 +117,6 @@ const HeroSection = () => {
                       <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
                     </svg>
                   ))}
-                  <span className="text-edu-gray ml-1 text-xs sm:text-sm">
-                    5.0
-                  </span>
                 </div>
               </div>
             </motion.div>

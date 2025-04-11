@@ -1,6 +1,6 @@
 "use client";
 
-import React, {use} from "react";
+import React, { use } from "react";
 import { notFound } from "next/navigation";
 import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
@@ -10,8 +10,6 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { teachers } from "../page";
-
-
 
 const TeacherDetail = ({ params }: { params: Promise<{ id: string }> }) => {
   const unwrappedParams = use(params);
@@ -49,7 +47,7 @@ const TeacherDetail = ({ params }: { params: Promise<{ id: string }> }) => {
                 <div className="w-full md:w-1/3">
                   <div className="aspect-square rounded-xl overflow-hidden mb-4">
                     <img
-                      src={teacher.image}
+                      src={`${teacher.image}`}
                       alt={teacher.name}
                       className="w-full h-full object-cover"
                     />
@@ -99,28 +97,22 @@ const TeacherDetail = ({ params }: { params: Promise<{ id: string }> }) => {
                     <p className="text-edu-gray">{teacher.education}</p>
                   </div>
 
-                  <div className="mb-6">
+                  {/* <div className="mb-6">
                     <h3 className="text-sm font-medium text-edu-black mb-2">
                       Subjects Taught
                     </h3>
-                    <div className="flex flex-wrap gap-2">
-                      {teacher.subjects.map((subject) => (
-                        <div
-                          key={subject}
-                          className="px-3 py-1 bg-blue-50 text-edu-blue rounded-full text-xs font-medium"
-                        >
-                          {subject}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                  </div> */}
 
                   <div>
                     <h3 className="text-sm font-medium text-edu-black mb-2">
                       About
                     </h3>
                     <p className="text-edu-gray">
-                      {teacher.name} is a dedicated educator with {teacher.experience.toLowerCase()} of experience in teaching {teacher.subjects.join(", ")}. {teacher.name} holds a {teacher.education.toLowerCase()} and is passionate about helping students achieve their academic goals.
+                      {teacher.name} is a dedicated educator with{" "}
+                      {teacher.experience.toLowerCase()} of experience in
+                      teaching. {teacher.name} holds a {teacher.education} and
+                      is passionate about helping students achieve their
+                      academic goals.
                     </p>
                   </div>
                 </div>

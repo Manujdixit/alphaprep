@@ -30,7 +30,7 @@ import {
 } from "@/components/ui/select";
 import { Calendar } from "@/components/ui/calendar";
 
-interface FormValues {
+export interface FormValues {
   name: string;
   email: string;
   classOrExam: string;
@@ -80,14 +80,14 @@ const BookingForm = () => {
     },
     resolver: async (values) => {
       const errors: Record<string, { type: string; message: string }> = {};
-      
+
       if (!values.name) {
         errors.name = {
           type: "required",
           message: "Please enter your name",
         };
       }
-      
+
       if (!values.email) {
         errors.email = {
           type: "required",
@@ -99,28 +99,28 @@ const BookingForm = () => {
           message: "Please enter a valid email address",
         };
       }
-      
+
       if (!values.classOrExam) {
         errors.classOrExam = {
           type: "required",
           message: "Please select an option",
         };
       }
-      
+
       if (!values.date) {
         errors.date = {
           type: "required",
           message: "Please select a date",
         };
       }
-      
+
       if (!values.timeSlot) {
         errors.timeSlot = {
           type: "required",
           message: "Please select a time slot",
         };
       }
-      
+
       return {
         values,
         errors,
@@ -146,19 +146,17 @@ const BookingForm = () => {
       };
 
       // Send data to Google Sheets
-      const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbxV5Xr4MrKX9XgtkBdgsPtEOxtihLLQnS1vX6-Ef62GPo3U04sT_stdHHwRBemIJT1f/exec",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          mode: "no-cors",
-          body: JSON.stringify(formData),
-        }
-      );
+      const rawResponse = await fetch("/api/bookingForm", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-      // console.log("Form submitted:", response.data);
+      console.log(rawResponse);
+      
 
       toast.success("Demo class booked successfully!", {
         description: `Your ${
@@ -337,13 +335,20 @@ const BookingForm = () => {
                           )}
                         </Button>
                       </PopoverTrigger>
-                      <PopoverContent className="w-auto p-0 bg-white" align="start">
+                      <PopoverContent
+                        className="w-auto p-0 bg-white"
+                        align="start"
+                      >
                         <Calendar
                           mode="single"
                           selected={field.value}
                           onSelect={field.onChange}
                           disabled={(date) =>
-                            date < new Date() || date > new Date(new Date().setMonth(new Date().getMonth() + 2))
+                            date < new Date() ||
+                            date >
+                              new Date(
+                                new Date().setMonth(new Date().getMonth() + 2)
+                              )
                           }
                           initialFocus
                         />
@@ -361,10 +366,7 @@ const BookingForm = () => {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Preferred Time Slot</FormLabel>
-                  <Select
-                    onValueChange={field.onChange}
-                    value={field.value}
-                  >
+                  <Select onValueChange={field.onChange} value={field.value}>
                     <FormControl>
                       <SelectTrigger className="rounded-lg w-full">
                         <SelectValue placeholder="Select a time slot" />
@@ -372,8 +374,8 @@ const BookingForm = () => {
                     </FormControl>
                     <SelectContent className="rounded-lg bg-white">
                       {timeSlots.map((slot) => (
-                        <SelectItem 
-                          key={slot} 
+                        <SelectItem
+                          key={slot}
                           value={slot}
                           className="cursor-pointer hover:bg-edu-blue/10"
                         >

@@ -55,7 +55,7 @@ const milestones = [
     year: "2019",
     title: "Foundation",
     description:
-      "EduVibe was founded with a mission to provide personalized education through 1-on-1 classes.",
+      "Alphaprep was founded with a mission to provide personalized education through 1-on-1 classes.",
   },
   {
     year: "2020",
@@ -85,25 +85,22 @@ const milestones = [
 
 const teamMembers = [
   {
-    name: "David Parker",
+    name: "Animesh Singh",
     position: "Founder & CEO",
-    image:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3",
-    bio: "Former high school principal with 15 years of experience in education. Passionate about transforming learning through personalization.",
+    image: "./animesh.png",
+    bio: "Entrepreneur and educator, mentored 100+ top scorers, passionate about effective online teaching and student success.",
   },
   {
-    name: "Jennifer Lee",
-    position: "Academic Director",
-    image:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=2788&auto=format&fit=crop&ixlib=rb-4.0.3",
-    bio: "Ph.D. in Education with expertise in curriculum development and personalized learning strategies.",
+    name: "Dheerendra Singh",
+    position: "Co-founder",
+    image: "./dheerendra.png",
+    bio: "Visionary co-founder and educator, mentoring students through innovative, student-focused teaching with impactful experience.",
   },
   {
-    name: "Mark Wilson",
-    position: "Technology Officer",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3",
-    bio: "Former EdTech developer with a passion for creating seamless digital learning experiences.",
+    name: "Manuj Dixit",
+    position: "Co-founder",
+    image: "./manuj.png",
+    bio: "Cofounder and passionate developer crafting seamless digital experiences, transform ideas into impactful digital products.",
   },
 ];
 
@@ -136,7 +133,7 @@ const About = () => {
               variants={fadeInUp}
               className="text-4xl md:text-5xl font-serif font-medium text-edu-black mb-6"
             >
-              About <span className="text-edu-blue">EduVibe</span>
+              About <span className="text-edu-blue">Alphaprep</span>
             </motion.h1>
             <motion.p
               custom={1}
@@ -171,18 +168,18 @@ const About = () => {
                 className="space-y-4 text-edu-gray"
               >
                 <p>
-                  EduVibe was founded in 2019 with a simple yet powerful
+                  Alphaprep was founded in 2020 with a simple yet powerful
                   mission: to transform education by providing truly
                   personalized learning experiences that adapt to each student's
                   unique needs, learning style, and pace.
                 </p>
                 <p>
-                  Our founder, David Parker, a former high school principal,
-                  noticed that traditional classroom settings often failed to
-                  meet the varied needs of individual students. With a vision to
-                  change this, he assembled a team of passionate educators and
-                  technology experts to create a platform that could deliver
-                  customized 1-on-1 education at scale.
+                  The idea began when the founders recognized that traditional
+                  classroom settings often failed to meet the varied needs of
+                  individual students. With a vision to change this, a team of
+                  passionate educators and technology experts came together to
+                  create a platform that could deliver customized 1-on-1
+                  education at scale.
                 </p>
                 <p>
                   What began as a small startup with just five teachers and
@@ -191,11 +188,11 @@ const About = () => {
                   students across the country.
                 </p>
                 <p>
-                  Today, EduVibe continues to pioneer personalized education
-                  through our live 1-on-1 Zoom classes, comprehensive
-                  curriculum, and commitment to academic excellence. We believe
+                  Today, Alphaprep continues to pioneer personalized education
+                  through live 1-on-1 classes, a comprehensive curriculum, and a
+                  deep commitment to academic excellence. The team believes
                   every student deserves an education tailored to their
-                  individual needs, and we work tirelessly to make that vision a
+                  individual needs and works tirelessly to make that vision a
                   reality.
                 </p>
               </motion.div>
@@ -215,7 +212,7 @@ const About = () => {
                   <div className="aspect-[1/1] relative">
                     <img
                       src="https://images.unsplash.com/photo-1606761568499-6d2451b23c66?q=80&w=2274&auto=format&fit=crop&ixlib=rb-4.0.3"
-                      alt="About EduVibe"
+                      alt="About Alphaprep"
                       className="object-cover w-full h-full rounded-lg"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent flex items-end">
@@ -453,7 +450,7 @@ const About = () => {
             transition={{ duration: 0.5 }}
             className="text-3xl md:text-4xl font-serif font-medium text-edu-black mb-8"
           >
-            Ready to Experience the EduVibe Difference?
+            Ready to Experience the Alphaprep Difference?
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

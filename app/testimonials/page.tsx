@@ -28,7 +28,7 @@ const testimonials: Testimonial[] = [
     image:
       "https://images.unsplash.com/photo-1463453091185-61582044d556?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3",
     testimonial:
-      "My son's grades have improved significantly since starting with EduVibe. The personalized attention he receives is something that was missing in his regular school classes. His math teacher is patient and explains complex concepts in simple terms. I highly recommend their services to any parent looking for quality tutoring.",
+      "My son's grades have improved significantly since starting with Alphaprep. The personalized attention he receives is something that was missing in his regular school classes. His math teacher is patient and explains complex concepts in simple terms. I highly recommend their services to any parent looking for quality tutoring.",
     subject: "Mathematics",
     date: "March 2023",
     rating: 5,
@@ -64,7 +64,7 @@ const testimonials: Testimonial[] = [
     image:
       "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3",
     testimonial:
-      "Before joining EduVibe, I was struggling with Physics and was close to giving up. My teacher not only helped me understand the concepts but also built my confidence. The way he connects theoretical knowledge to real-world examples makes learning so much more interesting. I'm now one of the top performers in my class.",
+      "Before joining Alphaprep, I was struggling with Physics and was close to giving up. My teacher not only helped me understand the concepts but also built my confidence. The way he connects theoretical knowledge to real-world examples makes learning so much more interesting. I'm now one of the top performers in my class.",
     subject: "Physics",
     date: "February 2023",
     rating: 5,
@@ -88,7 +88,7 @@ const testimonials: Testimonial[] = [
     image:
       "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?q=80&w=2789&auto=format&fit=crop&ixlib=rb-4.0.3",
     testimonial:
-      "As a college student struggling with advanced statistics, I needed specialized help. My EduVibe teacher has been instrumental in helping me grasp complex statistical concepts and improve my grades. The online platform is user-friendly, and the screen sharing feature makes it easy to work through problems together.",
+      "As a college student struggling with advanced statistics, I needed specialized help. My Alphaprep teacher has been instrumental in helping me grasp complex statistical concepts and improve my grades. The online platform is user-friendly, and the screen sharing feature makes it easy to work through problems together.",
     subject: "Statistics",
     date: "April 2023",
     rating: 5,
@@ -101,7 +101,7 @@ const testimonials: Testimonial[] = [
     image:
       "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=2662&auto=format&fit=crop&ixlib=rb-4.0.3",
     testimonial:
-      "Learning English as my second language was challenging, but my EduVibe teacher made it fun and interesting. We read books together, discuss them, and work on my writing skills. My vocabulary and confidence in speaking have improved dramatically. I'm now comfortable participating in class discussions at school.",
+      "Learning English as my second language was challenging, but my Alphaprep teacher made it fun and interesting. We read books together, discuss them, and work on my writing skills. My vocabulary and confidence in speaking have improved dramatically. I'm now comfortable participating in class discussions at school.",
     subject: "English",
     date: "January 2023",
     rating: 5,
@@ -113,7 +113,7 @@ const testimonials: Testimonial[] = [
     image:
       "https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?q=80&w=2888&auto=format&fit=crop&ixlib=rb-4.0.3",
     testimonial:
-      "My daughter had gaps in her math knowledge due to changing schools frequently. Her EduVibe teacher identified these gaps and created a personalized plan to address them. Within three months, she caught up with her peers and is now performing above grade level. The regular progress reports have been very helpful.",
+      "My daughter had gaps in her math knowledge due to changing schools frequently. Her Alphaprep teacher identified these gaps and created a personalized plan to address them. Within three months, she caught up with her peers and is now performing above grade level. The regular progress reports have been very helpful.",
     subject: "Mathematics",
     date: "March 2023",
     rating: 5,
@@ -125,7 +125,7 @@ const testimonials: Testimonial[] = [
     image:
       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3",
     testimonial:
-      "Our experience with EduVibe's Chemistry tutoring has been exceptional. The teacher's expertise and ability to explain complex chemical reactions through visual aids and experiments have helped my son develop a genuine interest in the subject. His grades have improved, but more importantly, he now enjoys studying Chemistry.",
+      "Our experience with Alphaprep's Chemistry tutoring has been exceptional. The teacher's expertise and ability to explain complex chemical reactions through visual aids and experiments have helped my son develop a genuine interest in the subject. His grades have improved, but more importantly, he now enjoys studying Chemistry.",
     subject: "Chemistry",
     date: "February 2023",
     rating: 5,
@@ -173,7 +173,7 @@ const Testimonials = () => {
               className="text-edu-gray max-w-2xl mx-auto"
             >
               Real stories from students and parents who have experienced the
-              EduVibe difference.
+              Alphaprep difference.
             </motion.p>{" "}
             {/* Added closing tag */}
           </div>
@@ -217,7 +217,7 @@ const Testimonials = () => {
                     ))}
                   </div>
                   <p className="text-edu-black text-lg font-medium italic mb-6">
-                    "EduVibe has completely transformed my daughter's
+                    "Alphaprep has completely transformed my daughter's
                     educational journey. Her confidence has soared, and her
                     grades have improved dramatically. The personalized approach
                     makes all the difference—her teacher truly understands how
@@ -277,83 +277,6 @@ const Testimonials = () => {
                 rating={testimonial.rating}
                 index={index}
               />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 px-4 md:px-8 bg-gradient-to-r from-slate-50 to-blue-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <motion.h2
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5 }}
-              className="text-3xl md:text-4xl font-serif font-medium text-edu-black mb-4"
-            >
-              Video <span className="text-edu-blue">Success Stories</span>
-            </motion.h2>
-            <motion.p
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-edu-gray max-w-2xl mx-auto"
-            >
-              Hear directly from our students about their transformative
-              learning experiences.
-            </motion.p>{" "}
-            {/* Added closing tag */}
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[1, 2, 3].map((item, index) => (
-              <motion.div
-                key={item}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="glass-card rounded-xl overflow-hidden"
-              >
-                <div className="relative aspect-video bg-gray-100">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-16 h-16 rounded-full bg-edu-blue/90 flex items-center justify-center cursor-pointer hover:bg-edu-blue transition-colors">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="white"
-                      >
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-lg font-serif font-medium text-edu-black mb-2">
-                    {
-                      [
-                        "From Struggling to Excelling",
-                        "My SAT Success Story",
-                        "How EduVibe Changed My Approach",
-                      ][index]
-                    }
-                  </h3>{" "}
-                  {/* Added closing tag */}
-                  <p className="text-edu-gray text-sm mb-4">
-                    {
-                      [
-                        "John shares how personalized math tutoring turned his grades around.",
-                        "Emily explains how she improved her SAT score by 250 points.",
-                        "Michael discusses his journey from hating to loving Physics.",
-                      ][index]
-                    }
-                  </p>{" "}
-                  {/* Added closing tag */}
-                  {/* ... rest of the video card content ... */}
-                </div>
-              </motion.div>
             ))}
           </div>
         </div>

@@ -19,7 +19,6 @@ interface Teacher {
   image: string;
   education: string;
   experience: string;
-  subjects: string[];
   rating: number;
   available: boolean;
 }
@@ -27,110 +26,72 @@ interface Teacher {
 export const teachers: Teacher[] = [
   {
     id: 1,
-    name: "Dr. Sarah Johnson",
-    position: "Mathematics Expert",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3",
-    education: "Ph.D. Mathematics",
-    experience: "12+ Years",
-    subjects: ["Algebra", "Calculus", "Statistics"],
+    name: "Er. Animesh Singh",
+    position: "Chemistry Expert",
+    image: "/animesh.png",
+    education: "B. Tech.",
+    experience: "3+ Years",
     rating: 4.9,
     available: true,
   },
   {
     id: 2,
-    name: "Prof. Michael Chen",
-    position: "Physics Specialist",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3",
-    education: "M.Sc. Physics",
-    experience: "8+ Years",
-    subjects: ["Physics", "Engineering", "Mathematics"],
+    name: "Er. Dhirendra Singh",
+    position: "Chemistry Expert",
+    image: "/dheerendra.png",
+    education: "B. Tech.",
+    experience: "3+ Years",
     rating: 4.8,
     available: true,
   },
   {
     id: 3,
-    name: "Ms. Emily Rodriguez",
-    position: "English Literature",
-    image:
-      "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3",
-    education: "M.A. Literature",
-    experience: "10+ Years",
-    subjects: ["English", "Literature", "Writing"],
+    name: "Dr. Shashikant Chaurasiya",
+    position: "Mathematics Specialist",
+    image: "/shashikant.png",
+    education: "PHD Maths",
+    experience: "4+ Years",
     rating: 4.9,
     available: true,
   },
   {
     id: 4,
-    name: "Dr. James Wilson",
-    position: "Biology Expert",
-    image:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3",
-    education: "Ph.D. Biology",
-    experience: "15+ Years",
-    subjects: ["Biology", "Anatomy", "Genetics"],
-    rating: 5.0,
-    available: false,
-  },
-  {
-    id: 5,
-    name: "Mrs. Sophia Lee",
-    position: "Chemistry Specialist",
-    image:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=2864&auto=format&fit=crop&ixlib=rb-4.0.3",
-    education: "M.Sc. Chemistry",
+    name: "Er. Indresh Maurya",
+    position: "Physics Expert",
+    image: "/indresh.png",
+    education: "M. Tech.",
     experience: "9+ Years",
-    subjects: ["Chemistry", "Biochemistry"],
     rating: 4.7,
     available: true,
   },
   {
-    id: 6,
-    name: "Mr. David Martinez",
-    position: "History Expert",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3",
-    education: "M.A. History",
-    experience: "11+ Years",
-    subjects: ["History", "Social Studies", "Geography"],
+    id: 7,
+    name: "Er. Dhananjay Swarnkar",
+    position: "Mathematics Expert",
+    image: "./dhananjay.png",
+    education: "B. Tech.",
+    experience: "4+ Years",
     rating: 4.8,
     available: true,
   },
   {
-    id: 7,
-    name: "Dr. Jennifer Singh",
-    position: "Computer Science",
-    image:
-      "https://images.unsplash.com/photo-1564460576398-ef55d99548b2?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3",
-    education: "Ph.D. CS",
-    experience: "7+ Years",
-    subjects: ["Programming", "Data Science", "Web Development"],
+    id: 8,
+    name: "Jai Prakash Maurya ",
+    position: "Biology Expert",
+    image: "./jai.png",
+    education: "M. Science",
+    experience: "4+ Years",
     rating: 5.0,
     available: true,
   },
   {
-    id: 8,
-    name: "Prof. Robert Jones",
-    position: "Economics Specialist",
-    image:
-      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3",
-    education: "Ph.D. Economics",
-    experience: "14+ Years",
-    subjects: ["Economics", "Business", "Finance"],
-    rating: 4.6,
-    available: false,
-  },
-  {
     id: 9,
-    name: "Ms. Lisa Wong",
-    position: "Art & Design",
-    image:
-      "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=2961&auto=format&fit=crop&ixlib=rb-4.0.3",
-    education: "B.F.A. Fine Arts",
-    experience: "8+ Years",
-    subjects: ["Art", "Design", "Visual Arts"],
-    rating: 4.9,
+    name: "Manuj Dixit",
+    position: "Coding Expert",
+    image: "./manuj.png",
+    education: "B. Tech.",
+    experience: "2+ Years",
+    rating: 4.5,
     available: true,
   },
 ];
@@ -172,40 +133,19 @@ const Teachers = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const toggleSubject = (subject: string) => {
-    if (selectedSubjects.includes(subject)) {
-      setSelectedSubjects(selectedSubjects.filter((s) => s !== subject));
-    } else {
-      setSelectedSubjects([...selectedSubjects, subject]);
-    }
-  };
+  // const toggleSubject = (subject: string) => {
+  //   if (selectedSubjects.includes(subject)) {
+  //     setSelectedSubjects(selectedSubjects.filter((s) => s !== subject));
+  //   } else {
+  //     setSelectedSubjects([...selectedSubjects, subject]);
+  //   }
+  // };
 
-  const resetFilters = () => {
-    setSelectedSubjects([]);
-    setAvailableOnly(false);
-    setSearchTerm("");
-  };
-
-  const filteredTeachers = teachers.filter((teacher) => {
-    // Filter by search term
-    const matchesSearch =
-      teacher.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      teacher.position.toLowerCase().includes(searchTerm.toLowerCase());
-
-    // Filter by selected subjects
-    const matchesSubjects =
-      selectedSubjects.length === 0 ||
-      teacher.subjects.some((subject) =>
-        selectedSubjects.some((s) =>
-          subject.toLowerCase().includes(s.toLowerCase())
-        )
-      );
-
-    // Filter by availability
-    const matchesAvailability = !availableOnly || teacher.available;
-
-    return matchesSearch && matchesSubjects && matchesAvailability;
-  });
+  // const resetFilters = () => {
+  //   setSelectedSubjects([]);
+  //   setAvailableOnly(false);
+  //   setSearchTerm("");
+  // };
 
   return (
     <div className="min-h-screen bg-white">
@@ -245,7 +185,7 @@ const Teachers = () => {
             className="mb-10"
           >
             <div className="glass-card rounded-xl overflow-hidden">
-              <div className="p-6">
+              {/* <div className="p-6">
                 <div className="flex flex-col md:flex-row gap-4 items-center">
                   <div className="w-full md:w-2/3 relative">
                     <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-edu-gray/50 h-4 w-4" />
@@ -330,14 +270,14 @@ const Teachers = () => {
                     </div>
                   </div>
                 )}
-              </div>
+              </div> */}
             </div>
           </motion.div>
 
           {/* Teachers Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredTeachers.length > 0 ? (
-              filteredTeachers.map((teacher, index) => (
+            {teachers.length > 0 ? (
+              teachers.map((teacher, index) => (
                 <div key={teacher.id} className="relative">
                   {!teacher.available && (
                     <div className="absolute top-4 right-4 z-20">
@@ -372,13 +312,13 @@ const Teachers = () => {
                 <p className="text-edu-gray text-center mb-6">
                   Please try adjusting your search or filters
                 </p>
-                <Button
+                {/* <Button
                   variant="outline"
                   className="border-edu-gray/30 text-edu-gray"
                   onClick={resetFilters}
                 >
                   Clear all filters
-                </Button>
+                </Button> */}
               </div>
             )}
           </div>
