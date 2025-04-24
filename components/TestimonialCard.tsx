@@ -44,13 +44,13 @@ const TestimonialCard = ({
     >
       <div className="flex justify-between items-start mb-6">
         <div className="flex items-center gap-4">
-          <div className="w-12 h-12 rounded-full overflow-hidden">
+          {/* <div className="w-12 h-12 rounded-full overflow-hidden">
             <img
               src={image}
               alt={name}
               className="w-full h-full object-cover"
             />
-          </div>
+          </div> */}
           <div>
             <h3 className="text-edu-black font-medium">{name}</h3>
             <p className="text-edu-gray text-sm">{role}</p>
@@ -77,7 +77,6 @@ const TestimonialCard = ({
         </div>
       </div>
       <div className="relative">
-       
         <p className="text-edu-black text-sm leading-relaxed relative z-10">
           {testimonial}
         </p>

@@ -23,10 +23,10 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "James Wilson",
-    role: "Parent of 9th Grader",
+    name: "Rajesh Sharma",
+    role: "Parent of 9th Standard Student",
     image:
-      "https://images.unsplash.com/photo-1463453091185-61582044d556?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?q=80&w=2960&auto=format&fit=crop&ixlib=rb-4.0.3",
     testimonial:
       "My son's grades have improved significantly since starting with Alphaprep. The personalized attention he receives is something that was missing in his regular school classes. His math teacher is patient and explains complex concepts in simple terms. I highly recommend their services to any parent looking for quality tutoring.",
     subject: "Mathematics",
@@ -35,22 +35,22 @@ const testimonials: Testimonial[] = [
   },
   {
     id: 2,
-    name: "Sophia Martinez",
-    role: "11th Grade Student",
+    name: "Priya Patel",
+    role: "11th Standard Student",
     image:
-      "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=2961&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3",
     testimonial:
-      "The 1-on-1 classes have been a game-changer for my SAT preparation. I can ask questions without feeling embarrassed, and my teacher adapts the pace to my understanding. I've seen a 200-point improvement in my practice tests in just two months. The flexible scheduling has been perfect for my busy sports schedule.",
-    subject: "SAT Prep",
+      "The 1-on-1 classes have been a game-changer for my JEE preparation. I can ask questions without feeling embarrassed, and my teacher adapts the pace to my understanding. I've seen a remarkable improvement in my problem-solving speed in just two months. The flexible scheduling has been perfect for my busy schedule.",
+    subject: "JEE Preparation",
     date: "January 2023",
     rating: 4,
   },
   {
     id: 3,
-    name: "Robert Chen",
-    role: "Parent of 7th Grader",
+    name: "Vikram Singh",
+    role: "Parent of 7th Standard Student",
     image:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3",
     testimonial:
       "The flexibility of scheduling classes around our busy family calendar has been incredible. The quality of teaching is outstanding and my daughter actually looks forward to her math lessons now! Her teacher makes learning fun and engaging, and the progress reports help us track her improvement.",
     subject: "Science",
@@ -59,73 +59,72 @@ const testimonials: Testimonial[] = [
   },
   {
     id: 4,
-    name: "Jessica Thompson",
-    role: "10th Grade Student",
+    name: "Ananya Gupta",
+    role: "10th Standard Student",
     image:
-      "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3",
     testimonial:
-      "Before joining Alphaprep, I was struggling with Physics and was close to giving up. My teacher not only helped me understand the concepts but also built my confidence. The way he connects theoretical knowledge to real-world examples makes learning so much more interesting. I'm now one of the top performers in my class.",
+      "Before joining Alphaprep, I was struggling with Physics and was close to giving up. My teacher not only helped me understand the concepts but also built my confidence. The way she connects theoretical knowledge to real-world examples makes learning so much more interesting. I'm now one of the top performers in my class.",
     subject: "Physics",
     date: "February 2023",
     rating: 5,
   },
   {
     id: 5,
-    name: "Michael Davis",
-    role: "Parent of 12th Grader",
+    name: "Arun Kumar",
+    role: "Parent of 12th Standard Student",
     image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=2788&auto=format&fit=crop&ixlib=rb-4.0.3",
     testimonial:
-      "We enrolled our son for AP Calculus preparation, and the results have been outstanding. His teacher is not only knowledgeable but also dedicated to ensuring he understands every concept thoroughly. The personalized approach has helped him gain confidence, and he's now considering majoring in Mathematics in college.",
-    subject: "AP Calculus",
+      "We enrolled our daughter for Advanced Mathematics preparation, and the results have been outstanding. Her teacher is not only knowledgeable but also dedicated to ensuring she understands every concept thoroughly. The personalized approach has helped her gain confidence, and she's now considering engineering.",
+    subject: "Advanced Mathematics",
     date: "December 2022",
     rating: 5,
   },
   {
     id: 6,
-    name: "Emily Johnson",
+    name: "Neha Joshi",
     role: "College Student",
     image:
-      "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?q=80&w=2789&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1554151228-14d9def656e4?q=80&w=2786&auto=format&fit=crop&ixlib=rb-4.0.3",
     testimonial:
-      "As a college student struggling with advanced statistics, I needed specialized help. My Alphaprep teacher has been instrumental in helping me grasp complex statistical concepts and improve my grades. The online platform is user-friendly, and the screen sharing feature makes it easy to work through problems together.",
+      "As a B.Com student struggling with advanced statistics, I needed specialized help. My Alphaprep teacher has been instrumental in helping me grasp complex statistical concepts and improve my grades. The online platform is user-friendly, and the screen sharing feature makes it easy to work through problems together.",
     subject: "Statistics",
     date: "April 2023",
     rating: 5,
   },
-
   {
     id: 7,
-    name: "Daniel Kim",
-    role: "8th Grade Student",
+    name: "Rahul Mehta",
+    role: "8th Standard Student",
     image:
-      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=2662&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3",
     testimonial:
-      "Learning English as my second language was challenging, but my Alphaprep teacher made it fun and interesting. We read books together, discuss them, and work on my writing skills. My vocabulary and confidence in speaking have improved dramatically. I'm now comfortable participating in class discussions at school.",
+      "Learning English was challenging for me, but my Alphaprep teacher made it fun and interesting. We read stories together, discuss them, and work on my writing skills. My vocabulary and confidence in speaking have improved dramatically. I'm now comfortable participating in class discussions at school.",
     subject: "English",
     date: "January 2023",
     rating: 5,
   },
   {
     id: 8,
-    name: "Sarah Wright",
-    role: "Parent of 6th Grader",
+    name: "Sunita Reddy",
+    role: "Parent of 6th Standard Student",
     image:
-      "https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?q=80&w=2888&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1554151228-14d9def656e4?q=80&w=2786&auto=format&fit=crop&ixlib=rb-4.0.3",
     testimonial:
-      "My daughter had gaps in her math knowledge due to changing schools frequently. Her Alphaprep teacher identified these gaps and created a personalized plan to address them. Within three months, she caught up with her peers and is now performing above grade level. The regular progress reports have been very helpful.",
+      "My son had gaps in his math knowledge due to changing schools frequently. His Alphaprep teacher identified these gaps and created a personalized plan to address them. Within three months, he caught up with his peers and is now performing above grade level. The regular progress reports have been very helpful.",
     subject: "Mathematics",
     date: "March 2023",
     rating: 5,
   },
   {
     id: 9,
-    name: "Thomas Garcia",
-    role: "Parent of 11th Grader",
+    name: "Sanjay Iyer",
+    role: "Parent of 11th Standard Student",
     image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3",
     testimonial:
-      "Our experience with Alphaprep's Chemistry tutoring has been exceptional. The teacher's expertise and ability to explain complex chemical reactions through visual aids and experiments have helped my son develop a genuine interest in the subject. His grades have improved, but more importantly, he now enjoys studying Chemistry.",
+      "Our experience with Alphaprep's Chemistry tutoring has been exceptional. The teacher's expertise and ability to explain complex chemical reactions through visual aids and experiments have helped my daughter develop a genuine interest in the subject. Her grades have improved, but more importantly, she now enjoys studying Chemistry.",
     subject: "Chemistry",
     date: "February 2023",
     rating: 5,
@@ -234,7 +233,7 @@ const Testimonials = () => {
                     </div>
                     <div>
                       <h3 className="text-edu-black font-medium">
-                        Karen Wilson
+                        Varniti Sharma
                       </h3>
                       <p className="text-edu-gray text-sm">
                         Parent of 8th Grader

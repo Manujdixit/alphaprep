@@ -24,6 +24,7 @@ import Link from "next/link";
 import HeroSection from "@/components/HeroSection";
 import NavBarHome from "@/components/NavBar copy";
 import { teachers } from "@/data/teachers";
+import Marquee from "react-fast-marquee";
 
 const features = [
   {
@@ -54,30 +55,30 @@ const features = [
 
 const testimonials = [
   {
-    name: "James Wilson",
+    name: "Rajesh Sharma",
     role: "Parent of 9th Grader",
     image:
-      "https://images.unsplash.com/photo-1463453091185-61582044d556?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3",
     testimonial:
-      "My son's grades have improved significantly since starting with Alphaprep. The personalized attention he receives is something that was missing in his regular school classes.",
+      "My son's performance in school has improved dramatically since joining Alphaprep. The individual attention he gets here was missing in his regular classroom environment.",
     rating: 5,
   },
   {
-    name: "Sophia Martinez",
+    name: "Priya Patel",
     role: "11th Grade Student",
     image:
-      "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=2961&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1593104547489-5cfb3839a3b5?q=80&w=2952&auto=format&fit=crop&ixlib=rb-4.0.3",
     testimonial:
-      "The 1-on-1 classes have been a game-changer for my SAT preparation. I can ask questions without feeling embarrassed, and my teacher adapts the pace to my understanding.",
+      "The personalized JEE preparation classes have transformed my understanding of difficult concepts. I can clarify doubts freely, and my mentor adjusts the teaching according to my learning pace.",
     rating: 5,
   },
   {
-    name: "Robert Chen",
+    name: "Amit Desai",
     role: "Parent of 7th Grader",
     image:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3",
     testimonial:
-      "The flexibility of scheduling classes around our busy family calendar has been incredible. The quality of teaching is outstanding and my daughter actually looks forward to her math lessons now!",
+      "The ability to schedule classes around our family's busy routine has been wonderful. The teaching quality is excellent, and my daughter now enjoys her science lessons!",
     rating: 4,
   },
 ];
@@ -89,23 +90,87 @@ const stats = [
   { value: "10K+", label: "Classes Delivered" },
 ];
 
-const subjectCategories = [
+const subjects = [
   {
-    title: "Mathematics",
-    subjects: ["Algebra", "Geometry", "Calculus", "Statistics"],
-    icon: BarChart,
+    id: 1,
+    title: "IIT/JEE Entrance (11th/12th)",
+    description: "Comprehensive preparation for engineering entrance exams",
+    icon: "🧪",
+    color: "bg-purple-600",
   },
   {
-    title: "Sciences",
-    subjects: ["Physics", "Chemistry", "Biology", "Computer Science"],
-    icon: BookIcon,
+    id: 2,
+    title: "Medical Entrance",
+    description: "NEET and other medical entrance exam preparation",
+    icon: "🩺",
+    color: "bg-red-600",
   },
   {
-    title: "Test Prep",
-    subjects: ["SAT", "ACT", "AP Exams", "IB Exams"],
-    icon: GraduationCap,
+    id: 3,
+    title: "National Defence Academy",
+    description: "Preparation for NDA and defense service exams",
+    icon: "🎖️",
+    color: "bg-green-600",
+  },
+  {
+    id: 4,
+    title: "9th/10th Foundation",
+    description: "Strong foundation for competitive exams",
+    icon: "📚",
+    color: "bg-blue-600",
+  },
+  {
+    id: 5,
+    title: "JEE Mains & Advanced",
+    description: "Specialized courses for JEE aspirants",
+    icon: "⚛️",
+    color: "bg-indigo-600",
+  },
+  {
+    id: 6,
+    title: "National Science Olympiad",
+    description: "Preparation for NSO and other olympiads",
+    icon: "🔭",
+    color: "bg-yellow-600",
+  },
+  {
+    id: 7,
+    title: "International Science Olympiad",
+    description: "Training for international level competitions",
+    icon: "🌍",
+    color: "bg-teal-600",
+  },
+  {
+    id: 8,
+    title: "International Math Olympiad",
+    description: "Advanced mathematical problem solving",
+    icon: "🧮",
+    color: "bg-pink-600",
+  },
+  {
+    id: 9,
+    title: "NSTSE Preparation",
+    description: "National Level Science Talent Search Exam",
+    icon: "🔬",
+    color: "bg-orange-600",
+  },
+  {
+    id: 10,
+    title: "Skill Development",
+    description: "Coding, robotics, and 21st century skills",
+    icon: "💻",
+    color: "bg-cyan-600",
+  },
+  {
+    id: 11,
+    title: "6th-8th Standard Subjects",
+    description: "Comprehensive school curriculum support",
+    icon: "📝",
+    color: "bg-lime-600",
   },
 ];
+
+const duplicatedSubjects = [...subjects, ...subjects];
 
 export default function Home() {
   return (
@@ -205,71 +270,30 @@ export default function Home() {
             </motion.p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {subjectCategories.map((category, index) => {
-              const Icon = category.icon;
-              return (
-                <motion.div
-                  key={category.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="glass-card rounded-xl overflow-hidden p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
-                >
-                  <div className="w-12 h-12 rounded-lg bg-edu-blue/10 flex items-center justify-center mb-5 group-hover:bg-edu-blue/20 transition-colors duration-300">
-                    <Icon
-                      size={24}
-                      className="text-edu-blue group-hover:scale-110 transition-transform duration-300"
-                    />
-                  </div>
-                  <h3 className="text-xl font-serif font-medium text-edu-black mb-4 group-hover:text-edu-blue transition-colors duration-300">
-                    {category.title}
-                  </h3>
-                  <ul className="space-y-2">
-                    {category.subjects.map((subject) => (
-                      <li key={subject} className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-edu-blue group-hover:bg-edu-blue-dark transition-colors duration-300"></div>
-                        <span className="text-edu-gray text-sm group-hover:text-edu-black transition-colors duration-300">
-                          {subject}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="mt-5 pt-3 border-t border-gray-100 group-hover:border-edu-blue/30 transition-colors duration-300">
-                    <button className="text-edu-blue text-sm font-medium flex items-center gap-1 group">
-                      Learn More
-                      <ArrowRight
-                        size={14}
-                        className="group-hover:translate-x-1 transition-transform duration-300"
-                      />
-                    </button>
-                  </div>
-                </motion.div>
-              );
-            })}
-            <motion.div
-              key={"Other Subjects/Exams"}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: 5 * 0.1 }}
-              className="glass-card rounded-xl overflow-hidden  hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex items-center justify-center"
-            >
-              <div className="p-6 text-center h-12 rounded-lg bg-edu-blue/10 flex flex-col items-center justify-center mb-5 group-hover:bg-edu-blue/20 transition-colors duration-300">
-                <h1 className="mb-5">
-                  Looking for any other exam/ subject/ class / skill?
-                </h1>
-                <button className="text-edu-blue text-sm font-medium flex items-center gap-1 group">
-                  Learn More
-                  <ArrowRight
-                    size={14}
-                    className="group-hover:translate-x-1 transition-transform duration-300"
-                  />
-                </button>
+          <Marquee
+            autoFill={true}
+            pauseOnHover={true}
+            speed={40}
+            gradient={true}
+            gradientColor="rgb(243, 244, 246)" // Fixed: Now passing a string
+            gradientWidth={100}
+            className="py-4"
+          >
+            {subjects.map((subject) => (
+              <div
+                key={subject.id}
+                className={`mx-4 flex h-48 w-72 flex-col justify-between rounded-xl ${subject.color} p-6 text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl`}
+              >
+                <div className="text-4xl">{subject.icon}</div>
+                <div>
+                  <h3 className="text-xl font-bold">{subject.title}</h3>
+                  <p className="mt-2 text-sm opacity-90">
+                    {subject.description}
+                  </p>
+                </div>
               </div>
-            </motion.div>
-          </div>
+            ))}
+          </Marquee>
         </div>
       </section>
 

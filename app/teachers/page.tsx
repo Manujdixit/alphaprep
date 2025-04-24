@@ -17,7 +17,7 @@ const teachers: Teacher[] = [
   {
     id: 1,
     name: "Er. Animesh Singh",
-    position: "Chemistry Expert",
+    position: "Founder & CEO, Chemistry Expert",
     image: "/animesh.png",
     education: "B. Tech.",
     experience: "3+ Years",
@@ -46,6 +46,16 @@ const teachers: Teacher[] = [
   },
   {
     id: 4,
+    name: "Jai Prakash Maurya ",
+    position: "Biology Expert",
+    image: "/jai.png",
+    education: "M. Science",
+    experience: "4+ Years",
+    rating: 5.0,
+    available: true,
+  },
+  {
+    id: 5,
     name: "Er. Indresh Maurya",
     position: "Physics Expert",
     image: "/indresh.png",
@@ -54,31 +64,23 @@ const teachers: Teacher[] = [
     rating: 4.7,
     available: true,
   },
+
   {
-    id: 7,
+    id: 6,
     name: "Er. Dhananjay Swarnkar",
     position: "Mathematics Expert",
-    image: "./dhananjay.png",
+    image: "/dhananjay.png",
     education: "B. Tech.",
     experience: "4+ Years",
     rating: 4.8,
     available: true,
   },
+
   {
-    id: 8,
-    name: "Jai Prakash Maurya ",
-    position: "Biology Expert",
-    image: "./jai.png",
-    education: "M. Science",
-    experience: "4+ Years",
-    rating: 5.0,
-    available: true,
-  },
-  {
-    id: 9,
+    id: 7,
     name: "Manuj Dixit",
     position: "Coding Expert",
-    image: "./manuj.png",
+    image: "/manuj.png",
     education: "B. Tech.",
     experience: "2+ Years",
     rating: 4.5,
@@ -349,7 +351,7 @@ const Teachers = () => {
                 <Link href="/book-demo">
                   <Button
                     size="lg"
-                    className="bg-white text-edu-blue hover:bg-white/90 rounded-lg px-6 py-6 h-auto"
+                    className="bg-white text-black hover:bg-white/90 rounded-lg px-6 py-6 h-auto"
                   >
                     Book a Free Demo Class
                     <Calendar size={18} className="ml-2" />
@@ -359,10 +361,10 @@ const Teachers = () => {
             </div>
             <div className="hidden lg:block">
               <div className="glass-card rounded-xl p-6 h-full bg-white/10">
-                <h3 className="text-xl font-serif font-medium mb-4">
+                <h3 className="text-xl text-black font-serif font-medium mb-4">
                   Teacher Qualifications
                 </h3>
-                <div className="space-y-4">
+                <div className="space-y-4 text-black">
                   <div className="flex items-start gap-3 bg-white/5 p-3 rounded-lg">
                     <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center mt-1">
                       <svg
@@ -382,7 +384,7 @@ const Teachers = () => {
                     </div>
                     <div>
                       <h4 className="font-medium mb-1">Advanced Degrees</h4>
-                      <p className="text-sm text-white/70">
+                      <p className="text-sm text-black/70">
                         All our teachers hold at least Master's degrees in their
                         respective fields
                       </p>
@@ -408,7 +410,7 @@ const Teachers = () => {
                     </div>
                     <div>
                       <h4 className="font-medium mb-1">Extensive Experience</h4>
-                      <p className="text-sm text-white/70">
+                      <p className="text-sm text-black/70">
                         Minimum 5 years of teaching experience and rigorous
                         selection process
                       </p>
@@ -434,7 +436,7 @@ const Teachers = () => {
                     </div>
                     <div>
                       <h4 className="font-medium mb-1">Continuous Training</h4>
-                      <p className="text-sm text-white/70">
+                      <p className="text-sm text-black/70">
                         Regular professional development to stay updated with
                         latest teaching methods
                       </p>
